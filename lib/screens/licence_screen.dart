@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:na_beauty_crm/const.dart';
 import 'package:go_router/go_router.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class LicenceScreen extends StatelessWidget {
+  const LicenceScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.go("/rl"),
+      onTap: () => context.go("/registerlogin"),
       child: SafeArea(
         child: Scaffold(
           body: Stack(

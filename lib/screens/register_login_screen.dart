@@ -1,9 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:go_router/go_router.dart';
 import 'package:na_beauty_crm/const.dart';
+import 'package:na_beauty_crm/widgets/already_have_an_account.dart';
+import 'package:na_beauty_crm/widgets/custom_button.dart';
 
 class RegisterLogin extends StatelessWidget {
   const RegisterLogin({super.key});
@@ -33,62 +31,19 @@ class RegisterLogin extends StatelessWidget {
                 ],
               ),
             ),
-            Column(
+            const Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 70),
-                  child: Container(
-                    height: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: greenMain,
-                    ),
-                    child: const SizedBox(
-                      width: double.infinity,
-                      child: Center(
-                        child: Text(
-                          'Создать аккаунт',
-                          style: TextStyle(
-                              fontFamily: "Roboto",
-                              fontSize: 17,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ),
-                    ),
+                  padding: EdgeInsets.symmetric(horizontal: 70),
+                  child: CustomButton(
+                    text: 'Создать аккаунт',
+                    pushTo: '/rl/register',
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  children: [
-                    const Text(
-                      'Уже есть аккаунт? ',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 17,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        context.push('/FILLLLL');
-                      },
-                      child: const Text(
-                        'Войти',
-                        style: TextStyle(
-                            color: greenMain,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 17),
-                      ),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 70,
-                ),
+                SizedBox(height: 20),
+                AlreadyHaveAnAccount(),
+                SizedBox(height: 70),
               ],
             )
           ],
