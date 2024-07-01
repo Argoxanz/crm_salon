@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:na_beauty_crm/const.dart';
-import 'package:go_router/go_router.dart';
 import 'package:na_beauty_crm/widgets/already_have_an_account.dart';
 import 'package:na_beauty_crm/widgets/custom_button.dart';
 
@@ -19,9 +18,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   void dispose() {
-    // Clean up the controller when the widget is removed from the
-    // widget tree.
     fullName.dispose();
+    email.dispose();
+    pass1.dispose();
+    pass2.dispose();
     super.dispose();
   }
 
