@@ -40,7 +40,7 @@ class ChoiceScreen extends StatelessWidget {
                   child: CustomButton(
                     text: 'Создать аккаунт',
                     func: () {
-                      context.push('/rl/register');
+                      context.push('/licence');
                     },
                   ),
                 ),

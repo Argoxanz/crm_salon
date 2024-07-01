@@ -5,6 +5,7 @@ import 'package:na_beauty_crm/screens/login/login_screen.dart';
 import 'package:na_beauty_crm/screens/register/add_number_screen.dart';
 import 'package:na_beauty_crm/screens/register/choice_screen.dart';
 import 'package:na_beauty_crm/screens/register/enter_verification_screen.dart';
+import 'package:na_beauty_crm/screens/register/licence_screen.dart';
 import 'package:na_beauty_crm/screens/register/register_screen.dart';
 import 'package:na_beauty_crm/screens/splash_screen.dart';
 
@@ -24,6 +25,12 @@ final GoRouter _router = GoRouter(
       path: '/rl',
       builder: (BuildContext context, GoRouterState state) {
         return const ChoiceScreen();
+      },
+    ),
+    GoRoute(
+      path: '/licence',
+      builder: (BuildContext context, GoRouterState state) {
+        return const LicenceScreen();
       },
     ),
     GoRoute(
