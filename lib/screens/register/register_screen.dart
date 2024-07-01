@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:na_beauty_crm/const.dart';
 import 'package:na_beauty_crm/widgets/already_have_an_account.dart';
 import 'package:na_beauty_crm/widgets/custom_button.dart';
+import 'package:na_beauty_crm/widgets/custom_text_form_field.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -105,12 +107,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     isObscured: true,
                   ),
                   const SizedBox(height: 30),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 70),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 70),
                     child: CustomButton(
-                        //CHANGE PUSH
-                        text: 'Продолжить',
-                        pushTo: '/rl/CHANGE'),
+                      text: 'Продолжить',
+                      func: () {
+                        context.push('/rl/register/number');
+                      },
+                    ),
                   ),
                   const SizedBox(height: 20),
                   const AlreadyHaveAnAccount(),
@@ -119,75 +123,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class CustomTextFormField extends StatefulWidget {
-  const CustomTextFormField({
-    super.key,
-    required this.controllerC,
-    required this.textC,
-    required this.iconC,
-    this.isObscured = false,
-  });
-
-  final TextEditingController controllerC;
-  final String textC;
-  final Widget iconC;
-  final bool isObscured;
-
-  @override
-  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
-}
-
-class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  bool passwordVisible = true;
-
-  @override
-  void initState() {
-    super.initState();
-    passwordVisible = true;
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-      child: TextFormField(
-        decoration: InputDecoration(
-          prefixIcon: widget.iconC,
-          border: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black38),
-              borderRadius: BorderRadius.all(Radius.circular(20))),
-          focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: greenMain),
-              borderRadius: BorderRadius.all(Radius.circular(20))),
-          labelText: widget.textC,
-          focusColor: greenMain,
-          suffixIcon: widget.isObscured
-              ? IconButton(
-                  icon: Icon(
-                    passwordVisible ? Icons.visibility_off : Icons.visibility,
-                    color: greenMain,
-                    size: iconInputSize,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      passwordVisible = !passwordVisible;
-                    });
-                  },
-                )
-              : null,
-        ),
-        controller: widget.controllerC,
-        obscureText: widget.isObscured ? passwordVisible : false,
       ),
     );
   }

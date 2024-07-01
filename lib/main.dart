@@ -1,9 +1,11 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:na_beauty_crm/const.dart';
-import 'package:na_beauty_crm/screens/login_screen.dart';
-import 'package:na_beauty_crm/screens/register_login_screen.dart';
-import 'package:na_beauty_crm/screens/register_screen.dart';
+import 'package:na_beauty_crm/screens/login/login_screen.dart';
+import 'package:na_beauty_crm/screens/register/add_number_screen.dart';
+import 'package:na_beauty_crm/screens/register/choice_screen.dart';
+import 'package:na_beauty_crm/screens/register/enter_verification_screen.dart';
+import 'package:na_beauty_crm/screens/register/register_screen.dart';
 import 'package:na_beauty_crm/screens/splash_screen.dart';
 
 void main() {
@@ -21,7 +23,7 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/rl',
       builder: (BuildContext context, GoRouterState state) {
-        return const RegisterLogin();
+        return const ChoiceScreen();
       },
     ),
     GoRoute(
@@ -34,6 +36,18 @@ final GoRouter _router = GoRouter(
       path: '/rl/register',
       builder: (BuildContext context, GoRouterState state) {
         return const RegisterScreen();
+      },
+    ),
+    GoRoute(
+      path: '/rl/register/number',
+      builder: (BuildContext context, GoRouterState state) {
+        return const AddNumber();
+      },
+    ),
+    GoRoute(
+      path: '/rl/register/number/confirm',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Verification();
       },
     ),
   ],

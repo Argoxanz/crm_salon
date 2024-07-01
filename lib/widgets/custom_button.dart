@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:na_beauty_crm/const.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.text,
-    required this.pushTo,
+    required this.func,
+    this.color = greenMain,
   });
 
   final String text;
-  final String pushTo;
+  final void Function()? func;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        context.push(pushTo);
-      },
+      onTap: func,
       child: Container(
         height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
-          color: greenMain,
+          color: color,
         ),
         child: SizedBox(
           width: double.infinity,

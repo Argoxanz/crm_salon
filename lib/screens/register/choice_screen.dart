@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:na_beauty_crm/const.dart';
 import 'package:na_beauty_crm/widgets/already_have_an_account.dart';
 import 'package:na_beauty_crm/widgets/custom_button.dart';
 
-class RegisterLogin extends StatelessWidget {
-  const RegisterLogin({super.key});
+class ChoiceScreen extends StatelessWidget {
+  const ChoiceScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,19 +32,21 @@ class RegisterLogin extends StatelessWidget {
                 ],
               ),
             ),
-            const Column(
+            Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 70),
+                  padding: const EdgeInsets.symmetric(horizontal: 70),
                   child: CustomButton(
                     text: 'Создать аккаунт',
-                    pushTo: '/rl/register',
+                    func: () {
+                      context.push('/rl/register');
+                    },
                   ),
                 ),
-                SizedBox(height: 20),
-                AlreadyHaveAnAccount(),
-                SizedBox(height: 70),
+                const SizedBox(height: 20),
+                const AlreadyHaveAnAccount(),
+                const SizedBox(height: 70),
               ],
             )
           ],
