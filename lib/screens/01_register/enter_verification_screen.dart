@@ -103,7 +103,7 @@ class _VerificationState extends State<Verification> {
                       //CHANGE PUSH
                       text: 'Подтвердить',
                       func: () {
-                        context.push('/main');
+                        context.go('/main');
                         print('VERIFATION CALL');
                       },
                     )),
