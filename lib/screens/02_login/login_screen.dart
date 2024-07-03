@@ -82,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       //CHANGE PUSH
                       text: 'Войти',
                       func: () {
-                        context.go('/main');
+                        context.go('/home');
                       },
                     ),
                   ),

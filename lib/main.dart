@@ -1,12 +1,17 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:na_beauty_crm/const.dart';
-import 'package:na_beauty_crm/screens/login/login_screen.dart';
-import 'package:na_beauty_crm/screens/register/add_number_screen.dart';
-import 'package:na_beauty_crm/screens/register/choice_screen.dart';
-import 'package:na_beauty_crm/screens/register/enter_verification_screen.dart';
-import 'package:na_beauty_crm/screens/register/licence_screen.dart';
-import 'package:na_beauty_crm/screens/register/register_screen.dart';
+import 'package:na_beauty_crm/screens/02_login/login_screen.dart';
+import 'package:na_beauty_crm/screens/01_register/add_number_screen.dart';
+import 'package:na_beauty_crm/screens/01_register/choice_screen.dart';
+import 'package:na_beauty_crm/screens/01_register/enter_verification_screen.dart';
+import 'package:na_beauty_crm/screens/01_register/licence_screen.dart';
+import 'package:na_beauty_crm/screens/01_register/register_screen.dart';
+import 'package:na_beauty_crm/screens/03_main/branches_screen.dart';
+import 'package:na_beauty_crm/screens/03_main/contacts_screen.dart';
+import 'package:na_beauty_crm/screens/03_main/discount_screen.dart';
+import 'package:na_beauty_crm/screens/03_main/home_screen.dart';
+import 'package:na_beauty_crm/screens/03_main/price_screen.dart';
 import 'package:na_beauty_crm/screens/splash_screen.dart';
 
 void main() {
@@ -54,7 +59,37 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/rl/register/number/confirm',
       builder: (BuildContext context, GoRouterState state) {
-        return const Verification();
+        return const VerificationScreen();
+      },
+    ),
+    GoRoute(
+      path: '/home',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeScreen();
+      },
+    ),
+    GoRoute(
+      path: '/branches',
+      builder: (BuildContext context, GoRouterState state) {
+        return const BranchesScreen();
+      },
+    ),
+    GoRoute(
+      path: '/discount',
+      builder: (BuildContext context, GoRouterState state) {
+        return const DiscountScreen();
+      },
+    ),
+    GoRoute(
+      path: '/price',
+      builder: (BuildContext context, GoRouterState state) {
+        return const PriceScreen();
+      },
+    ),
+    GoRoute(
+      path: '/contacts',
+      builder: (BuildContext context, GoRouterState state) {
+        return const ContactsScreen();
       },
     ),
   ],

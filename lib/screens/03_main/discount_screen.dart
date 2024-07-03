@@ -3,14 +3,14 @@ import 'package:na_beauty_crm/const.dart';
 import 'package:na_beauty_crm/widgets/custom_appbar.dart';
 import 'package:na_beauty_crm/widgets/custom_navbar.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class DiscountScreen extends StatefulWidget {
+  const DiscountScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<DiscountScreen> createState() => _DiscountScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _DiscountScreenState extends State<DiscountScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -5,14 +5,14 @@ import 'package:na_beauty_crm/const.dart';
 import 'package:na_beauty_crm/widgets/custom_button.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class Verification extends StatefulWidget {
-  const Verification({super.key});
+class VerificationScreen extends StatefulWidget {
+  const VerificationScreen({super.key});
 
   @override
-  State<Verification> createState() => _VerificationState();
+  State<VerificationScreen> createState() => _VerificationState();
 }
 
-class _VerificationState extends State<Verification> {
+class _VerificationState extends State<VerificationScreen> {
   final vercode = TextEditingController();
 
   @override
@@ -103,8 +103,7 @@ class _VerificationState extends State<Verification> {
                       //CHANGE PUSH
                       text: 'Подтвердить',
                       func: () {
-                        context.go('/main');
-                        print('VERIFATION CALL');
+                        context.go('/home');
                       },
                     )),
                 const SizedBox(height: 20),
@@ -114,9 +113,7 @@ class _VerificationState extends State<Verification> {
                     //CHANGE PUSH
                     text: 'Отправить повторно',
                     color: Colors.black38,
-                    func: () {
-                      print('VERIFATION RECALL');
-                    },
+                    func: () {},
                   ),
                 ),
                 const SizedBox(height: 70),

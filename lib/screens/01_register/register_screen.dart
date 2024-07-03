@@ -33,16 +33,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: backroundGrey,
-          //Profile
-          // actions: [
-          //   IconButton(
-          //       onPressed: () {},
-          //       icon: const Icon(
-          //         Icons.person,
-          //         color: greenMain,
-          //         size: 52,
-          //       ))
-          // ],
         ),
         body: Stack(
           children: <Widget>[
